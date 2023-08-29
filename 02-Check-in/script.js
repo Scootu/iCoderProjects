@@ -1,8 +1,8 @@
-const btnMode = document.querySelector(".toggle-mode");
+const checkInput = document.getElementById("checkbox");
+const animatePg = document.querySelector(".animatePg");
 const cartContainer = document.querySelector(".container-check-in");
-function addEventListenerToBtnMode() {
-  btnMode.addEventListener("click", () => {
-    cartContainer.classList.toggle("dark-theme");
-  });
-}
-addEventListenerToBtnMode();
+
+checkInput.addEventListener("click", () => {
+  animatePg.classList.toggle("selcted");
+  cartContainer.classList.toggle("dark-theme");
+});

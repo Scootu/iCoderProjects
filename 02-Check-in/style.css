@@ -33,11 +33,91 @@ body {
         'opsz' 48
 }
 
+
+
+.label {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 14px;
+}
+
+label input {
+    position: absolute;
+    opacity: 0;
+}
+
+.sun {
+    position: absolute;
+    font-size: 4rem;
+    color: #ffffff;
+    transform: scale(0);
+    transition: 1s ease;
+}
+
+
+
+.moon {
+    font-size: 4rem;
+    color: #999;
+    transition: 1s ease;
+}
+
+.toggle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #000;
+    z-index: -1;
+    transition: 1s;
+}
+
+input:checked~.moon {
+    transform: rotate(360deg) scale(0);
+}
+
+input:checked~.sun {
+    transform: scale(1) rotate(360deg);
+}
+
+input:checked~.toggle {
+    background-color: #d5d6d9;
+}
+
+.animatePg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-main-clr);
+    clip-path: circle(0% at 4% 14%);
+    transition: 1.5s ease-out;
+    z-index: -10;
+}
+
+.animatePg.selcted {
+    clip-path: circle(167.5% at 4% 14%);
+
+}
+
+
+/* input:checked~,
+.animatePg {
+  
+} */
+
 .container-check-in {
     background-color: #ffffff;
     width: 400px;
     padding: 2rem;
-    margin: auto;
+    margin: 100px auto;
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -97,6 +177,9 @@ body {
 .content-location-non {
     padding: 0 5rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content-location-non svg {
@@ -139,6 +222,7 @@ body {
 
 .dark-theme {
     background-color: var(--dark-main-clr);
+    transition: 1s;
 }
 
 .dark-theme .hed {
@@ -169,6 +253,7 @@ body {
 .dark-theme .btn {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.dark-theme .content-location-non svg { 
+
+.dark-theme .content-location-non svg {
     background-color: var(--dark-input-clr);
 }
